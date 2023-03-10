@@ -38,7 +38,8 @@ datanode2
 datanode3
 ```
 
-# Start and Stop Spark cluster
+# Only on namenode (Spark Master)
+Start and Stop Spark cluster
 ```
 /usr/local/spark/sbin/start-all.sh
 jps
@@ -47,8 +48,8 @@ jps
 
 Spark Master UI avilable at http://namenode:8080/
 
-## Sample Program :
-Save program as samplecode.py on namenode (Spark Master).
+Sample Program :
+Save program as samplecode.py on namenode.
 
 ```
 from pyspark import SparkContext, SparkConf
