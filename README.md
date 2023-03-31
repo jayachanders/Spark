@@ -1,6 +1,6 @@
 # Spark
 
-## Install Spark in Master Slave Mode (On all nodes)
+## Install Spark in Master Slave Mode (On all nodes) Standalone MODE
 
 Download and Extract required version of Spark on Master and Slaves
 ```
@@ -26,12 +26,14 @@ source .bashrc
 
 On spark-env.sh workers file add the required details.
 
-/usr/local/spark/bin/spark-env.sh
+If JAVA_HOME is not set, set it in the below file.
+/usr/local/spark/conf/spark-env.sh
 ```
 export SPARK_MASTER_HOST=namenode
 ```
 
-/usr/local/spark/bin/workers
+create the file
+/usr/local/spark/conf/slaves
 ```
 datanode1
 datanode2
@@ -69,5 +71,5 @@ print(even.take(5))
 
 Run the program and check Spark Master UI.
 ```
-/usr/spark/bin/spark-submit --master spark://namenode:7077 samplecode.py
+/usr/local/spark/bin/spark-submit --master spark://namenode:7077 samplecode.py
 ```
